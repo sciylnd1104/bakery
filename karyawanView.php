@@ -14,7 +14,6 @@
                   <thead class="bg-info text-white">
                     <tr>
                       <th>No</th>
-                      <th>ID Karyawan</th>
                       <th>Nama</th>
                       <th>Jenis Kelamin</th>
                       <th>Telepon</th>
@@ -28,7 +27,6 @@
                   <tfoot class="bg-info text-white">
                     <tr>
                     <th>No</th>
-                      <th>ID Karyawan</th>
                       <th>Nama</th>
                       <th>Jenis Kelamin</th>
                       <th>Telepon</th>
@@ -49,14 +47,13 @@
                  ?>
                  <tr>
                         <td><?= $i?></td>
-                        <td><?= $row['id_karyawan']?></td>
                         <td><?= $row['nama_karyawan']?></td>
                         <td><?= $row['jk']?></td>
                         <td><?= $row['telp']?></td>
                         <td><?= $row['status']?></td>
                         <td><?= $row['email']?></td>
                         <td><?= $row['alamat']?></td>
-                        <td><?= $row['foto']?></td>
+                        <td><img src="gambar/<?=$row['foto']?>" width="70px" height="70px"></td>
                         <td>
                           <a href="karyawanController.php?aksi=hapus&id_karyawan=<?php echo $row['id_karyawan']?>" class="btn btn-danger pr-2 pl-2" onclick="return confirm('Anda yakin ingin menghapus')"><i class="fas fa-trash mr-2"></i>Hapus</a>
                           <a href="?p=karyawan&page=update&id=<?php echo $row['id_karyawan']?>" class="btn btn-primary ml-2 pr-2 pl-2"><i class="far fa-edit mr-2"></i>Edit</a>
@@ -79,7 +76,7 @@
                           ID Karyawan
                         </div>
                         <div class="col-md-5">
-                          <input type="text" name="txtNama" class="form-control">
+                          <input type="text" name="txtIdKaryawan" class="form-control">
                         </div>
                       </div>
                     
@@ -88,7 +85,7 @@
                           Nama Karyawan
                         </div>
                         <div class="col-md-5">
-                          <input type="textArea" name="txtKeterangan" class="form-control">
+                          <input type="textArea" name="txtNama" class="form-control">
                         </div>
                       </div>
                             
@@ -97,10 +94,8 @@
                           Jenis Kelamin
                         </div>
                         <div class="col-md-5">
-                        <select name="cmbJk" class="form-control">
-                                <option value="L">Laki-Laki</option>
-                                <option value="P">Perempuan</option>
-                          </select>
+                                <input type="radio" name="jekel" value="L">Laki-Laki
+                                <input type="radio" name="jekel" value="P">Perempuan
                         </div>
                       </div>
 
@@ -174,7 +169,7 @@
                           ID Karyawan
                         </div>
                         <div class="col-md-5">
-                          <input type="text" name="txtNama" class="form-control" value="<?=$data['id_karyawan']?>">
+                          <input type="text" name="txtIdKaryawan" class="form-control" value="<?=$data['id_karyawan']?>">
                         </div>
                       </div>
                       <div class="row mt-2">
@@ -182,7 +177,7 @@
                           Nama Karyawan
                         </div>
                         <div class="col-md-5">
-                          <input type="textArea" name="txtKeterangan" class="form-control" value="<?=$data['nama_karyawan']?>">
+                          <input type="textArea" name="txtNama" class="form-control" value="<?=$data['nama_karyawan']?>">
                         </div>
                       </div>
                       <div class="row mt-2">
@@ -190,17 +185,8 @@
                           Jenis Kelamin
                         </div>
                         <div class="col-md-5">
-                        <select name="cmbKaryawan" class="form-control">
-                            <?php
-                                $datakaryawan = mysqli_query($koneksi,'select * from karyawan');
-                                while($row=mysqli_fetch_array($datakaryawan)){
-                            ?>
-                            <option value='<?php  echo "$row[nama_karyawan]" ?>' <?php  if($row['id_karyawan']== $data['id_karyawan']) echo "selected='selected'"?> ><?php  echo "$row[nama_karyawan]"?></option>
-                            <?php
-                              }
-                            ?>
-
-                          </select>
+                          <input type="radio" name="jekel" value="L" <?php echo ($data['jk']=='L')? 'checked':''?>>Laki-Laki
+                          <input type="radio" name="jekel" value="P"<?php echo ($data['jk']=='P')? 'checked':''?>>Perempuan
                         </div>
                       </div>
                       <div class="row mt-2">
@@ -208,7 +194,7 @@
                           Telepon
                         </div>
                         <div class="col-md-5">
-                          <input type="textArea" name="txtKeterangan" class="form-control" value="<?=$data['telp']?>">
+                          <input type="textArea" name="txtTelepon" class="form-control" value="<?=$data['telp']?>">
                         </div>
                       </div>
                       <div class="row mt-2">
@@ -216,7 +202,7 @@
                           Status
                         </div>
                         <div class="col-md-5">
-                          <input type="textArea" name="txtKeterangan" class="form-control" value="<?=$data['status']?>">
+                          <input type="textArea" name="txtStatus" class="form-control" value="<?=$data['status']?>">
                         </div>
                       </div>
                       <div class="row mt-2">
@@ -224,7 +210,7 @@
                           Email
                         </div>
                         <div class="col-md-5">
-                          <input type="textArea" name="txtKeterangan" class="form-control" value="<?=$data['email']?>">
+                          <input type="textArea" name="txtEmail" class="form-control" value="<?=$data['email']?>">
                         </div>
                       </div>
                       <div class="row mt-2">
@@ -232,7 +218,7 @@
                           Alamat
                         </div>
                         <div class="col-md-5">
-                          <input type="textArea" name="txtKeterangan" class="form-control" value="<?=$data['alamat']?>">
+                          <input type="textArea" name="txtAlamat" class="form-control" value="<?=$data['alamat']?>">
                         </div>
                       </div>
                       <div class="row mt-2">

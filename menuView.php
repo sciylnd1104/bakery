@@ -19,6 +19,7 @@
                       <th>Harga</th>
                       <th>Detail</th>
                       <th>Kategori</th>
+                      <th>Stok</th>
                       <th>Photo</th>
                       <th>Aksi</th>
                     </tr>
@@ -31,6 +32,7 @@
                       <th>Harga</th>
                       <th>Detail</th>
                       <th>Kategori</th>
+                      <th>Stok</th>
                       <th>Photo</th>
                       <th>Aksi</th>
                     </tr>
@@ -49,6 +51,7 @@
                         <td><?=$row['harga']?></td>
                         <td><?=$row['detail']?></td>
                         <td><?=$row['nama_kategori']?></td>
+                        <td><?=$row['stok']?></td>
                         <td><img src="gambar/<?=$row['foto']?>" width="70px" height="70px"></td>
                         <td>
                         <a href="menuController.php?aksi=hapus&id_menu=<?php echo $row['id_menu']?>" class="btn btn-danger pr-2 pl-2" onclick="return confirm('Anda yakin ingin menghapus')"><i class="fas fa-trash mr-2"></i>Hapus</a>
@@ -112,6 +115,14 @@
                                 }
                             ?>
                           </select>
+                      </div>
+                    </div>
+                    <div class="row mt-2">
+                      <div class="col-md-2">
+                        Stok
+                      </div>
+                      <div class="col-md-5">
+                        <input type="text" name="txtStok" class="form-control">
                       </div>
                     </div>
                     <div class="row mt-2">
@@ -183,6 +194,14 @@
                           </select>
                         </div>
                       </div>
+                      <div class="row mt-2">
+                      <div class="col-md-2">
+                        Stok
+                      </div>
+                      <div class="col-md-5">
+                        <input type="text" name="txtStok" class="form-control" value="<?=$data['stok'] ?>">
+                      </div>
+                    </div>
                     <div class="row mt-2">
                       <div class="col-md-2">
                         Foto

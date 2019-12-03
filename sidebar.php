@@ -53,9 +53,9 @@
 
 <!-- Nav Item - Charts -->
 <li class="nav-item">
-  <a class="nav-link" href="#">
+  <a class="nav-link" href="index.php?p=karyawan">
     <i class="fas fa-fw fa-chart-area"></i>
-    <span>Charts</span></a>
+    <span>Karyawan</span></a>
 </li>
 
 <!-- Divider -->
@@ -65,7 +65,26 @@
 <li class="nav-item">
   <a class="nav-link" href="#">
     <i class="fas fa-fw fa-table"></i>
-    <span>Tables</span></a>
+    <span>fgsdfdgs</span></a>
+</li>
+
+<hr class="sidebar-divider my-0">
+
+<!-- Nav Item - Charts -->
+<li class="nav-item">
+  <a class="nav-link" href="index.php?p=karyawan">
+    <i class="fas fa-fw fa-chart-area"></i>
+    <span>Krtrtrrt</span></a>
+</li>
+
+<!-- Divider -->
+<hr class="sidebar-divider my-0">
+
+<!-- Nav Item - Tables -->
+<li class="nav-item">
+  <a class="nav-link" href="#">
+    <i class="fas fa-fw fa-table"></i>
+    <span>gfdfdfdf</span></a>
 </li>
 
 <!-- Divider -->

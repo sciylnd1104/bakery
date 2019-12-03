@@ -42,7 +42,6 @@
                         <td>
                           <a href="kategoriController.php?aksi=hapus&id_kategori=<?php echo $row['id_kategori']?>" class="btn btn-danger pr-2 pl-2" onclick="return confirm('Anda yakin ingin menghapus')"><i class="fas fa-trash mr-2"></i>Hapus</a>
                           <a href="?p=kategori&page=update&id=<?php echo $row['id_kategori']?>" class="btn btn-primary ml-2 pr-2 pl-2"><i class="far fa-edit mr-2"></i>Edit</a>
-                          <a href="" class="btn btn-success">Detail</a>
                         </td>
                       </tr>
                       <?php $i++;}?>
