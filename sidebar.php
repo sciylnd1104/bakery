@@ -25,6 +25,32 @@
     <span>Menu</span>
   </a>
 </li>
+<hr class="sidebar-divider my-0">
+
+<!-- Nav Item - Tables -->
+<li class="nav-item">
+  <a class="nav-link" href="index.php?p=krim">
+    <i class="fas fa-fw fa-table"></i>
+    <span>Krim</span></a>
+</li>
+
+<!-- Divider -->
+<hr class="sidebar-divider my-0">
+
+<li class="nav-item">
+  <a class="nav-link" href="index.php?p=topping">
+    <i class="fas fa-fw fa-table"></i>
+    <span>Topping</span></a>
+</li>
+
+<!-- Divider -->
+<hr class="sidebar-divider my-0">
+
+<li class="nav-item">
+  <a class="nav-link" href="index.php?p=karakter">
+    <i class="fas fa-fw fa-table"></i>
+    <span>Karakter</span></a>
+</li>
 
 <!-- Divider -->
 <hr class="sidebar-divider my-0">
@@ -59,14 +85,7 @@
 </li>
 
 <!-- Divider -->
-<hr class="sidebar-divider my-0">
 
-<!-- Nav Item - Tables -->
-<li class="nav-item">
-  <a class="nav-link" href="#">
-    <i class="fas fa-fw fa-table"></i>
-    <span>fgsdfdgs</span></a>
-</li>
 
 <hr class="sidebar-divider my-0">
 

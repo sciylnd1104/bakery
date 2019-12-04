@@ -13,6 +13,7 @@
   <!-- Custom styles for this page -->
   <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+  
 <body id="page-top">
   <div id="wrapper">
     <?php
@@ -21,10 +22,9 @@
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
         <div class="container-fluid">
-        
+      
         <?php
             include('header.php');
-            
             if(isset($_GET['p'])){
               $p = $_GET['p'];
 
@@ -34,6 +34,15 @@
                 break;
                 case 'menu':
                   include('menuView.php');
+                break;
+                case 'krim':
+                  include('krimView.php');
+                break;
+                case 'topping':
+                include('toppingView.php');
+                break;
+                case 'karakter':
+                include('karakterView.php');
                 break;
                 case 'kategori':
                   include('kategoriView.php');
@@ -50,7 +59,7 @@
               }
             }
           ?>
-
+        
         </div>
       </div>
 

@@ -86,6 +86,7 @@
                         <select class="form-control" name="level">
                           <option value="Administrator">Administrator</option>
                           <option value="Anggota">Anggota</option>
+                          <option value="Pelanggan">Pelanggan</option>
                         </select>
                       </div>
                     </div>
