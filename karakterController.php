@@ -3,8 +3,9 @@ include('koneksi.php');
   if($_GET['aksi']=='tambah'){
     $id_karakter = isset($_POST['txtID'])?$_POST['txtID']:'';
     $nama_karakter = isset($_POST['txtNama'])?$_POST['txtNama']:'';
+    $harga = isset($_POST['txtHarga'])?$_POST['txtHarga']:'';
     if(isset($_POST['btnSubmit'])){
-      $simpan = mysqli_query($koneksi,"insert into karakter values('$id_karakter','$nama_karakter')");
+      $simpan = mysqli_query($koneksi,"insert into karakter values('$id_karakter','$nama_karakter','$harga')");
       if($simpan){
         header('location:index.php?p=karakter');
       }
@@ -13,10 +14,12 @@ include('koneksi.php');
   else if($_GET['aksi']=='ubah'){
     $id = $_GET['id'];
     $nama_karakter = isset($_POST['txtNama'])?$_POST['txtNama']:'';
+    $harga = isset($_POST['txtHarga'])?$_POST['txtHarga']:'';
     if(isset($_POST['btnSubmit'])){
       $edit = mysqli_query($koneksi,
       "update karakter
       set nama_karakter = '$nama_karakter',
+      harga = '$harga'
       where id_karakter = '$id'");
       if($edit){
         header('location:index.php?p=karakter');

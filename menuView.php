@@ -14,10 +14,8 @@
                   <thead class="bg-info text-white">
                     <tr>
                       <th>No</th>
-                      <th>ID Menu</th>
                       <th>Nama</th>
                       <th>Harga</th>
-                      <th>Detail</th>
                       <th>Kategori</th>
                       <th>Stok</th>
                       <th>Photo</th>
@@ -27,10 +25,8 @@
                   <tfoot class="bg-info text-white">
                     <tr>
                       <th>No</th>
-                      <th>ID Menu</th>
                       <th>Nama</th>
                       <th>Harga</th>
-                      <th>Detail</th>
                       <th>Kategori</th>
                       <th>Stok</th>
                       <th>Photo</th>
@@ -46,17 +42,15 @@
                  ?>
                       <tr>
                       <td><?php echo $i?></td>
-                        <td><?php echo $row['id_menu']?></td>
                         <td><?php echo $row['nama_menu']?></td>
                         <td><?=$row['harga']?></td>
-                        <td><?=$row['detail']?></td>
                         <td><?=$row['nama_kategori']?></td>
                         <td><?=$row['stok']?></td>
                         <td><img src="gambar/<?=$row['foto']?>" width="70px" height="70px"></td>
                         <td>
                         <a href="menuController.php?aksi=hapus&id_menu=<?php echo $row['id_menu']?>" class="btn btn-danger pr-2 pl-2" onclick="return confirm('Anda yakin ingin menghapus')"><i class="fas fa-trash mr-2"></i>Hapus</a>
                           <a href="?p=menu&page=update&id_menu=<?php echo $row['id_menu']?>" class="btn btn-primary ml-2 pr-2 pl-2"><i class="far fa-edit mr-2"></i>Edit</a>
-                          <a href="" class="btn btn-success">Detail</a></td>
+                          <a href="?p=menu&page=detail&id_menu=<?php echo $row['id_menu']?>" class="btn btn-success">Detail</a></td>
                       </tr>
                       <?php $i++;}?>
                   </tbody>
@@ -217,16 +211,60 @@
                       <div class="col-md-5">
                         <input type="submit" name="btnSubmit" value="Submit" class="btn btn-primary">
                         <input type="reset" name="btnReset" value="Reset" class="btn btn-danger">
+                        
                       </div>
                     </div>
                   </form>
                   <?php
+                  break;
+                  case 'detail':
+                  include ('koneksi.php');
+                  $data = mysqli_query($koneksi,"SELECT * from menu INNER JOIN kategori ON menu.id_kategori = kategori.id_kategori");
+                  $i =1;
+                  while ($row=mysqli_fetch_array($data)) {
+                  ?>
+                  <a href="index.php?p=menu" class="btn btn-info">Back</a>
+                  <br>
+                  <br>
+                  <h2>Detail Menu</h2>
+                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <tr>
+                      <th style="width:20%; ">ID Menu</th>
+                      <td><?php echo $row['id_menu']?></td>
+                    </tr>
+                    <tr>
+                      <th>Nama</th>
+                      <td><?php echo $row['nama_menu']?></td>
+                    </tr>
+                    <tr>
+                      <th>Harga</th>
+                      <td><?=$row['harga']?></td>
+                    </tr>
+                    <tr>
+                      <th>Detail</th>
+                      <td><?=$row['detail']?></td>
+                    </tr>
+                    <tr>
+                      <th>Kategori</th>
+                      <td><?=$row['nama_kategori']?></td>
+                    </tr>
+                    <tr>
+                      <th>Stok</th>
+                      <td><?=$row['stok']?></td>
+                    </tr>
+                    <tr>
+                      <th>Foto</th>
+                      <td><img src="gambar/<?=$row['foto']?>" width="70px" height="70px"></td>
+                    </tr>
+                </table>
+                  <?php
+                  }
                     break;
                     }
                   ?>
                   </div>
               </div>
-            </div>
+            
        
         <!-- /.container-fluid -->
  

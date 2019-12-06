@@ -82,7 +82,7 @@
           $_SESSION['user']=$data['username'];
           $_SESSION['level']=$data['level'];
           $_SESSION['foto']=$data['foto'];
-          header("location:index.php");
+          header("location:index.php?p=dashboard");
         }else{
           echo "<script>alert('Username atau Password Salah')</script>";
         }

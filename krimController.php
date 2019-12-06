@@ -3,8 +3,9 @@ include('koneksi.php');
   if($_GET['aksi']=='tambah'){
     $id_krim = isset($_POST['txtID'])?$_POST['txtID']:'';
     $nama_krim = isset($_POST['txtNama'])?$_POST['txtNama']:'';
+    $harga = isset($_POST['txtHarga'])?$_POST['txtHarga']:'';
     if(isset($_POST['btnSubmit'])){
-      $simpan = mysqli_query($koneksi,"insert into krim values('$id_krim','$nama_krim')");
+      $simpan = mysqli_query($koneksi,"insert into krim values('$id_krim','$nama_krim','$harga')");
       if($simpan){
         header('location:index.php?p=krim');
       }
@@ -13,10 +14,12 @@ include('koneksi.php');
   else if($_GET['aksi']=='ubah'){
     $id = $_GET['id'];
     $nama_krim = isset($_POST['txtNama'])?$_POST['txtNama']:'';
+    $harga = isset($_POST['txtHarga'])?$_POST['txtHarga']:'';
     if(isset($_POST['btnSubmit'])){
       $edit = mysqli_query($koneksi,
       "update krim
       set nama_krim = '$nama_krim',
+      harga = '$harga'
       where id_krim = '$id'");
       if($edit){
         header('location:index.php?p=krim');

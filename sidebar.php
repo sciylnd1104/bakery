@@ -66,8 +66,11 @@
 <!-- Divider -->
 <hr class="sidebar-divider my-0">
 
-<!-- Nav Item - Pages Collapse Menu -->
-<li class="nav-item">
+<?php
+if ($_SESSION['level']=="Administrator")
+{
+  ?>
+  <li class="nav-item">
   <a class="nav-link collapsed" href="index.php?p=user">
     <i class="fas fa-fw fa-user"></i>
     <span>User</span>
@@ -84,27 +87,12 @@
     <span>Karyawan</span></a>
 </li>
 
-<!-- Divider -->
+<?php
+}
+?>
+<!-- Nav Item - Pages Collapse Menu -->
 
 
-<hr class="sidebar-divider my-0">
-
-<!-- Nav Item - Charts -->
-<li class="nav-item">
-  <a class="nav-link" href="index.php?p=karyawan">
-    <i class="fas fa-fw fa-chart-area"></i>
-    <span>Krtrtrrt</span></a>
-</li>
-
-<!-- Divider -->
-<hr class="sidebar-divider my-0">
-
-<!-- Nav Item - Tables -->
-<li class="nav-item">
-  <a class="nav-link" href="#">
-    <i class="fas fa-fw fa-table"></i>
-    <span>gfdfdfdf</span></a>
-</li>
 
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">

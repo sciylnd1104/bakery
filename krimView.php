@@ -16,6 +16,7 @@
                       <th>No</th>
                       <th>ID</th>
                       <th>Nama</th>
+                      <th>Harga</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
@@ -24,6 +25,7 @@
                         <th>No</th>
                         <th>ID</th>
                         <th>Nama</th>
+                        <th>Harga</th>
                         <th>Aksi</th>
                     </tr>
                   </tfoot>
@@ -39,6 +41,7 @@
                         <td><?= $i?></td>
                         <td><?= $row['id_krim']?></td>
                         <td><?= $row['nama_krim']?></td>
+                        <td><?= $row['harga']?></td>
                         <td>
                           <a href="krimController.php?aksi=hapus&id_krim=<?php echo $row['id_krim']?>" class="btn btn-danger pr-2 pl-2" onclick="return confirm('Anda yakin ingin menghapus')"><i class="fas fa-trash mr-2"></i>Hapus</a>
                           <a href="?p=krim&page=update&id=<?php echo $row['id_krim']?>" class="btn btn-primary ml-2 pr-2 pl-2"><i class="far fa-edit mr-2"></i>Edit</a>
@@ -70,7 +73,15 @@
                         <div class="col-md-5">
                           <input type="text" name="txtNama" class="form-control">
                         </div>
-                      </div>                   
+                      </div>
+                      <div class="row mt-2">
+                        <div class="col-md-2">
+                          Harga
+                        </div>
+                        <div class="col-md-5">
+                          <input type="text" name="txtHarga" class="form-control">
+                        </div>
+                      </div>                    
                       <div class="row mt-2">
                         <div class="col-md-2">
                           &nbsp;
@@ -95,7 +106,7 @@
                           ID
                         </div>
                         <div class="col-md-5">
-                          <input type="text" name="txtID" class="form-control" value="<?=$data['id_krim']?>">
+                          <input type="text" name="txtID" disabled="disabled" class="form-control" value="<?=$data['id_krim']?>">
                         </div>
                       </div>
                     <div class="row mt-2">
@@ -106,7 +117,14 @@
                           <input type="text" name="txtNama" class="form-control" value="<?=$data['nama_krim']?>">
                         </div>
                       </div>
-                      
+                      <div class="row mt-2">
+                        <div class="col-md-2">
+                          Harga
+                        </div>
+                        <div class="col-md-5">
+                          <input type="text" name="txtHarga" class="form-control" value="<?=$data['harga']?>>
+                        </div>
+                      </div>    
                       <div class="row mt-2">
                         <div class="col-md-2">
                           &nbsp;
